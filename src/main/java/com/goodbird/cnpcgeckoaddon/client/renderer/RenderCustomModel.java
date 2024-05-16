@@ -42,6 +42,10 @@ public class RenderCustomModel extends GeoEntityRendererCompat<EntityCustomModel
     protected void applyRotations(EntityCustomModel entityLiving, MatrixStack matrixStackIn, float ageInTicks, float rotationYaw,
                                   float partialTicks) {
         Pose pose = entityLiving.getPose();
+
+        if (isShaking(animatable))
+            rotationYaw += (float)(Math.cos(animatable.tickCount * 3.25d) * Math.PI * 0.4d);
+
         if (pose != Pose.SLEEPING) {
             matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(180.0F - rotationYaw));
         }

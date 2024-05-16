@@ -46,7 +46,7 @@ public class EntityCustomModel extends CreatureEntity implements IAnimatable, IA
             }
         }
         if (dialogAnim != null) {
-            if (((IAnimationController)event.getController()).getCurrentAnimationBuilder() == dialogAnim &&event.getController().getAnimationState() == AnimationState.Stopped) {
+            if (((IAnimationController)event.getController()).getCurrentAnimationBuilder() == dialogAnim && event.getController().getAnimationState() == AnimationState.Stopped) {
                 dialogAnim = null;
             } else {
                 if (((IAnimationController)event.getController()).getCurrentAnimationBuilder() != dialogAnim) {

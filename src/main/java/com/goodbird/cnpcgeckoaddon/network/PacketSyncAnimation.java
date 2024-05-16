@@ -4,6 +4,7 @@ import com.goodbird.cnpcgeckoaddon.entity.EntityCustomModel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.network.NetworkEvent;
@@ -51,8 +52,8 @@ public class PacketSyncAnimation {
         AnimationBuilder builder = new AnimationBuilder();
         CompoundNBT compound = buf.readNbt();
         ListNBT animList = compound.getList("anims",10);
-        for(int i=0;i<animList.size();i++){
-            CompoundNBT animTag = (CompoundNBT) animList.get(i);
+        for (INBT inbt : animList) {
+            CompoundNBT animTag = (CompoundNBT) inbt;
             builder.addAnimation(animTag.getString("name"),
                     ILoopType.EDefaultLoopTypes.values()[animTag.getInt("loop")]);
         }

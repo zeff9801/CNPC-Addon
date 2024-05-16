@@ -23,8 +23,8 @@ public class CustomModelData {
         nbttagcompound.putString("HurtAnim", hurtAnim);
         nbttagcompound.putString("HeadBoneName", headBoneName);
         nbttagcompound.putInt("TransitionLengthTicks", transitionLengthTicks);
-        nbttagcompound.putFloat("Width",width);
-        nbttagcompound.putFloat("Height",height);
+        nbttagcompound.putFloat("Width", width);
+        nbttagcompound.putFloat("Height", height);
         nbttagcompound.putBoolean("HurtTintEnabled",hurtTintEnabled);
         return nbttagcompound;
     }
